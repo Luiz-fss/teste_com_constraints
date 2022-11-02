@@ -379,21 +379,47 @@ class _MyHomePageState extends State<MyHomePage> {
       ],
     );Mesma coisa porém vai ser permitido que tenha o espaço necessário ou menos
     * */
-    return  Row(
-      children: [
-        Flexible(
-          child: Container(
-            color: Colors.red,
-            child: Text("Texto longo demais para não caber na largura da tela"),
+    /*Exemplo 28
+    * Scaffold(
+      body: Container(
+        color: Colors.yellow,
+        child: Column(
+          children: [
+            Text("Hello..."),
+            Text("World!")
+          ],
+        ),
+      ),
+    );Scaffold está na tela, portanto a dimensão dele é a da tela.
+    * O container vai poder ter o tamnho que quiser respeitando a constraint da tela
+    * */
+    /*Exemplo 29
+    * Scaffold(
+      body: SizedBox.expand(
+        child: Container(
+          color: Colors.yellow,
+          child: Column(
+            children: [
+              Text("Hello..."),
+              Text("World!")
+            ],
           ),
         ),
-        Flexible(
-          child: Container(
-            color: Colors.blueAccent,
-            child: Text("World"),
+      ),
+    );O sizedbox.expanded vai fazer com que o filho dele seja do mesmo tamnho
+    * que o pai*/
+    return  Scaffold(
+      body: SizedBox.expand(
+        child: Container(
+          color: Colors.yellow,
+          child: Column(
+            children: [
+              Text("Hello..."),
+              Text("World!")
+            ],
           ),
-        )
-      ],
+        ),
+      ),
     );
   }
 }
