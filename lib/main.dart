@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -445,16 +446,62 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
     );*/
-    return Center(
-      child: IntrinsicHeight(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Container(color: Colors.green,child: Text("aa"),),
-            Container(height: 300,width: 100,color: Colors.yellow,)
-          ],
-        ),
-      ),
+
+    /*Vai manter o maximo de 2 linhas
+    * AutoSizeText(
+      "Texto adaptar",
+      style: TextStyle(fontSize: 30),
+      maxLines: 2,
+    );*/
+
+    /*
+    * AutoSizeText(
+      "Texto adaptar",
+      style: TextStyle(fontSize: 30),
+      minFontSize: 18,
+      maxLines: 4,
+      overflow: TextOverflow.ellipsis,
+    );
+    * Fonte vai ter no minimo tamanho 18, quando chegar nesse limite de 4 linhas
+    * vai dar ... */
+
+    /*Autosized sendo aplicando quando não se quer perder
+    * o padrão de fonte
+    *  var myGroup = AutoSizeGroup();
+
+    return AutoSizeText(
+      "Texto adaptar",
+      group: myGroup,
+    ); caso houvessem mais textos eles teriam o mesmo tamanho de fonte*/
+
+    /*Vai começar a diminuir de acordo com o valor setado na variavel de
+    * stepGranularity, caso não seja especificado ele diminui de 1 em 1
+    * return AutoSizeText(
+      "Texto adaptar",
+      stepGranularity: 10,
+      minFontSize: 10,
+      maxLines: 4,
+      overflow: TextOverflow.ellipsis,
+      style: TextStyle(fontSize: 40),
+    );*/
+
+    /*Também é possivel tamanhos especifcios, ter uma fonte que vai de por ex
+    * de 40 pra 20 e de 20 para 14
+    * return AutoSizeText(
+      "Texto adaptar",
+      presetFontSizes: [40,20,14],
+    );*/
+
+    /*Caso queira exibir algum texto quando o tamanho ultrapassar o limite
+    * tambem é possivel
+    *
+    * return AutoSizeText(
+      "Texto adaptar",
+      overflowReplacement: Text("Texto muito longo, desculpe"),
+    );*/
+    return AutoSizeText(
+      "Texto adaptar",
+      overflowReplacement: Text("Texto muito longo, desculpe"),
     );
   }
 }
