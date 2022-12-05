@@ -408,18 +408,43 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );O sizedbox.expanded vai fazer com que o filho dele seja do mesmo tamnho
     * que o pai*/
-    return  Scaffold(
-      body: SizedBox.expand(
-        child: Container(
+    /*FractionallySizedBox(
+      widthFactor: 0.5,
+      heightFactor: 0.5,
+      child: Container(color: Colors.green,),
+    ); permite definir porcentagens para o widget filho com base no tamanho
+    do pai*/
+
+    /*Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(color: Colors.green,
+        height: 200,
+        width: 200,),
+        Flexible(child: FractionallySizedBox(
+          heightFactor: 0.2,
+        )),
+        Container(
           color: Colors.yellow,
-          child: Column(
-            children: [
-              Text("Hello..."),
-              Text("World!")
-            ],
-          ),
-        ),
-      ),
+        height: 200,
+        width: 200,)
+      ],
+    );Exemplo de espaçamento baseado em porcentagens usando o fractionally
+    */
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(color: Colors.green,
+        height: 200,
+        width: 200,),
+        const Flexible(child: FractionallySizedBox(
+          heightFactor: 0.2,
+        )),
+        Container(
+          color: Colors.yellow,
+        height: 200,
+        width: 200,)
+      ],
     );
   }
 }
