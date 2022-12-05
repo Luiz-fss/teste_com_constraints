@@ -431,20 +431,30 @@ class _MyHomePageState extends State<MyHomePage> {
       ],
     );Exemplo de espaçamento baseado em porcentagens usando o fractionally
     */
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(color: Colors.green,
-        height: 200,
-        width: 200,),
-        const Flexible(child: FractionallySizedBox(
-          heightFactor: 0.2,
-        )),
-        Container(
-          color: Colors.yellow,
-        height: 200,
-        width: 200,)
-      ],
+
+    /*
+    * Esse widget vai pegar o maior widget da Row, e vai definir o tamanho da row baseado na altura do maior widget
+    * Center(
+      child: IntrinsicHeight(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(color: Colors.green,child: Text("aa"),),
+            Container(height: 300,width: 100,color: Colors.yellow,)
+          ],
+        ),
+      ),
+    );*/
+    return Center(
+      child: IntrinsicHeight(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(color: Colors.green,child: Text("aa"),),
+            Container(height: 300,width: 100,color: Colors.yellow,)
+          ],
+        ),
+      ),
     );
   }
 }
